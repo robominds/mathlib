@@ -4,6 +4,8 @@
 #include "matrix.hpp"
 #include "vector.hpp"
 
+namespace mathlib {
+
 template<size_t N, typename T>
 matrix<N, N, T> eye(void) {
     matrix<N, N, T> result;
@@ -187,8 +189,8 @@ matrix<C, R, T> transpose(const matrix<R, C, T> &mat) {
 }
 
 template<size_t R, size_t C, typename T>
-vector<C, T> operator*(const matrix<R, C, T> &mat, const vector<C, T> &v) {
-    vector<C, T> result(T(0));
+vector<R, T> operator*(const matrix<R, C, T> &mat, const vector<C, T> &v) {
+    vector<R, T> result(T(0));
 
     for(size_t i=0; i<R; i++) {
         for(size_t j=0; j<C; j++) {
@@ -197,5 +199,7 @@ vector<C, T> operator*(const matrix<R, C, T> &mat, const vector<C, T> &v) {
     }
     return result;
 }
+
+}  // namespace mathlib
 
 

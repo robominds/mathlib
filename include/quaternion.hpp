@@ -6,13 +6,15 @@
 #include <math.h>
 #include <vector.hpp>
 
+namespace mathlib {
+
 template<typename T>
 class quaternion {
     public:
         quaternion(void);
         quaternion(T s, vector<3, T> v);
-        quaternion(T *vals, bool noramlize = true);
-        quaternion(std::initializer_list<T> vals, bool noramlize = true);
+        quaternion(T *vals, bool normalize = true);
+        quaternion(std::initializer_list<T> vals, bool normalize = true);
         quaternion(const quaternion<T> &q);
 
         // Pure quaternion constructor
@@ -164,3 +166,5 @@ inline const T& quaternion<T>::v(size_t indx) const {
 
     return _v(indx);
 }
+
+}  // namespace mathlib
