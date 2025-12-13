@@ -7,8 +7,6 @@
 #include <initializer_list>
 #include <string.h>
 
-namespace mathlib {
-
 template<size_t R, size_t C, typename T>
 class matrix {
 
@@ -122,5 +120,3 @@ inline const T& matrix<R, C, T>::operator()(size_t rowIndx, size_t colIndx) cons
   assert(rowIndx < R && colIndx < C);
   return data[rowIndx*C+colIndx]; 
 }
-
-}  // namespace mathlib

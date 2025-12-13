@@ -7,8 +7,6 @@
 #include <initializer_list>
 #include <string.h>
 
-namespace mathlib {
-
 template<size_t N, typename T>
 class vector {
 
@@ -102,5 +100,3 @@ inline const T& vector<N, T>::operator()(size_t indx) const {
   assert(indx < N);
   return data[indx]; 
 }
-
-}  // namespace mathlib

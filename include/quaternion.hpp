@@ -6,8 +6,6 @@
 #include <math.h>
 #include <vector.hpp>
 
-namespace mathlib {
-
 template<typename T>
 class quaternion {
     public:
@@ -166,5 +164,3 @@ inline const T& quaternion<T>::v(size_t indx) const {
 
     return _v(indx);
 }
-
-}  // namespace mathlib
